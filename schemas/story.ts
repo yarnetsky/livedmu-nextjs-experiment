@@ -59,7 +59,8 @@ export default defineType({
       name: 'body',
       title: 'Story or Story Description',
       description: 'This is the primary text of the story',
-      type: 'markdown',
+      type: 'array',
+      of: [{ type: 'block' }],
     }),
     defineField({
       name: 'theme',
@@ -128,7 +129,8 @@ export default defineType({
     defineField({
       name: 'productionCredits',
       title: 'Production Credits',
-      type: 'markdown',
+      type: 'array',
+      of: [{ type: 'block' }],
     }),
     defineField({
       name: 'publishedAt',
@@ -171,7 +173,8 @@ export default defineType({
     defineField({
       name: 'citations',
       title: 'Citations',
-      type: 'markdown',
+      type: 'array',
+      of: [{ type: 'block' }],
     }),
     defineField({
       name: 'storyMetadata',
@@ -186,10 +189,10 @@ export default defineType({
       media: 'image',
     },
     prepare(selection) {
-      const { person } = selection;
+      const { person } = selection
       return Object.assign({}, selection, {
         subtitle: person && `by ${person}`,
-      });
+      })
     },
   },
-});
+})

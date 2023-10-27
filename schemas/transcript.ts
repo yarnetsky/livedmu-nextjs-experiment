@@ -23,7 +23,8 @@ export default defineType({
             {
               name: 'transcriptText',
               title: 'Transcript text',
-              type: 'markdown',
+              type: 'array',
+              of: [{ type: 'block' }],
             },
           ],
         },
@@ -39,4 +40,4 @@ export default defineType({
       image: 'transcripts.0',
     },
   },
-});
+})
