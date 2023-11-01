@@ -4,7 +4,6 @@ import { defineField, defineType } from 'sanity';
 export default defineType({
   name: 'story',
   title: 'Story',
-  icon: BookIcon,
   type: 'document',
   fields: [
     defineField({
