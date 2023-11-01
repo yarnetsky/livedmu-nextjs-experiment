@@ -32,7 +32,7 @@ import miamiProfile from 'schemas/miamiProfile';
 import organization from 'schemas/organization';
 import person from 'schemas/person';
 import personName from 'schemas/personName';
-import postType from 'schemas/post'
+
 import relatedLinks from 'schemas/relatedLinks';
 import settingsType from 'schemas/settings'
 import storyMetadata from 'schemas/storyMetadata';
@@ -49,7 +49,7 @@ export default defineConfig({
   title,
   schema: {
     // If you want more content types, you can add them to this array
-    types: [settingsType, storyType, authorType, postType, contentdm, demographics, featuredLinks, gallery, kaltura, localSubjects, mainImage, major, miamiEducation, miamiEmployment, miamiProfile, organization, person, personName, relatedLinks, storyMetadata, theme, transcript],
+    types: [settingsType, storyType, authorType, storyType, contentdm, demographics, featuredLinks, gallery, kaltura, localSubjects, mainImage, major, miamiEducation, miamiEmployment, miamiProfile, organization, person, personName, relatedLinks, storyMetadata, theme, transcript],
   },
   plugins: [
     deskTool({
@@ -63,7 +63,7 @@ export default defineConfig({
     previewUrl({
       base: DRAFT_MODE_ROUTE,
       urlSecretId: previewSecretId,
-      matchTypes: [postType.name, settingsType.name],
+      matchTypes: [storyType.name, settingsType.name],
     }),
     // Add an image asset source for Unsplash
     unsplashImageAsset(),

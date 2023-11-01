@@ -6,7 +6,7 @@ import cover from './cover.png'
 
 export default memo(function IntroTemplate() {
   const [studioURL, setStudioURL] = useState(null)
-  const [createPostURL, setCreatePostURL] = useState(null)
+  const [createStoryURL, setCreateStoryURL] = useState(null)
   const [isLocalHost, setIsLocalhost] = useState(false)
 
   const hasEnvFile = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
@@ -24,8 +24,8 @@ export default memo(function IntroTemplate() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setStudioURL(`${window.location.origin}/studio`)
-      setCreatePostURL(
-        `${window.location.origin}/studio/intent/create/template=post;type=post/`,
+      setCreateStoryURL(
+        `${window.location.origin}/studio/intent/create/template=story;type=story/`,
       )
       setIsLocalhost(window.location.hostname === 'localhost')
       setHasUTMtags(window.location.search.includes('utm'))
@@ -96,7 +96,7 @@ export default memo(function IntroTemplate() {
                   <div className="mt-3">
                     <Link
                       className="inline-flex rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-800"
-                      href={createPostURL}
+                      href={createStoryURL}
                     >
                       Go to Sanity Studio
                     </Link>
@@ -115,10 +115,10 @@ export default memo(function IntroTemplate() {
 
                   {isLocalHost ? (
                     <div className="text-xs text-gray-700">
-                      Start editing your content structure by changing the post
+                      Start editing your content structure by changing the story
                       schema in
                       <div className="w-fit bg-slate-200 px-2">
-                        <pre>schemas/post.ts</pre>
+                        <pre>schemas/story.ts</pre>
                       </div>
                     </div>
                   ) : (

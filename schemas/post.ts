@@ -5,10 +5,10 @@ import { defineField, defineType } from 'sanity'
 import authorType from './author'
 
 /**
- * This file is the schema definition for a post.
+ * This file is the schema definition for a story.
  *
  * Here you'll be able to edit the different fields that appear when you 
- * create or edit a post in the studio.
+ * create or edit a story in the studio.
  * 
  * Here you can see the different schema types that are available:
 
@@ -17,8 +17,8 @@ import authorType from './author'
  */
 
 export default defineType({
-  name: 'post',
-  title: 'Post',
+  name: 'story',
+  title: 'Story',
   icon: BookIcon,
   type: 'document',
   fields: [

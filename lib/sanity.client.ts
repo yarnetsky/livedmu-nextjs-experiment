@@ -1,10 +1,10 @@
 import { apiVersion, dataset, projectId, useCdn } from 'lib/sanity.api'
 import {
   indexQuery,
-  type Post,
-  postAndMoreStoriesQuery,
-  postBySlugQuery,
-  postSlugsQuery,
+  type Story,
+  storyAndMoreStoriesQuery,
+  storyBySlugQuery,
+  storySlugsQuery,
   type Settings,
   settingsQuery,
 } from 'lib/sanity.queries'
@@ -38,26 +38,26 @@ export async function getSettings(client: SanityClient): Promise<Settings> {
   return (await client.fetch(settingsQuery)) || {}
 }
 
-export async function getAllPosts(client: SanityClient): Promise<Post[]> {
+export async function getAllStories(client: SanityClient): Promise<Story[]> {
   return (await client.fetch(indexQuery)) || []
 }
 
-export async function getAllPostsSlugs(): Promise<Pick<Post, 'slug'>[]> {
+export async function getAllStoriesSlugs(): Promise<Pick<Story, 'slug'>[]> {
   const client = getClient()
-  const slugs = (await client.fetch<string[]>(postSlugsQuery)) || []
+  const slugs = (await client.fetch<string[]>(storySlugsQuery)) || []
   return slugs.map((slug) => ({ slug }))
 }
 
-export async function getPostBySlug(
+export async function getStoryBySlug(
   client: SanityClient,
   slug: string,
-): Promise<Post> {
-  return (await client.fetch(postBySlugQuery, { slug })) || ({} as any)
+): Promise<Story> {
+  return (await client.fetch(storyBySlugQuery, { slug })) || ({} as any)
 }
 
-export async function getPostAndMoreStories(
+export async function getStoryAndMoreStories(
   client: SanityClient,
   slug: string,
-): Promise<{ post: Post; morePosts: Post[] }> {
-  return await client.fetch(postAndMoreStoriesQuery, { slug })
+): Promise<{ story: Story; moreStories: Story[] }> {
+  return await client.fetch(storyAndMoreStoriesQuery, { slug })
 }

@@ -1,16 +1,16 @@
 import Avatar from 'components/AuthorAvatar'
 import CoverImage from 'components/CoverImage'
-import Date from 'components/PostDate'
-import PostTitle from 'components/PostTitle'
-import type { Post } from 'lib/sanity.queries'
+import Date from 'components/StoryDate'
+import StoryTitle from 'components/StoryTitle'
+import type { Story } from 'lib/sanity.queries'
 
-export default function PostHeader(
-  props: Pick<Post, 'title' | 'coverImage' | 'date' | 'author' | 'slug'>,
+export default function StoryHeader(
+  props: Pick<Story, 'title' | 'coverImage' | 'date' | 'author' | 'slug'>,
 ) {
   const { title, coverImage, date, author, slug } = props
   return (
     <>
-      <PostTitle>{title}</PostTitle>
+      <StoryTitle>{title}</StoryTitle>
       <div className="hidden md:mb-12 md:block">
         {author && <Avatar name={author.name} picture={author.picture} />}
       </div>

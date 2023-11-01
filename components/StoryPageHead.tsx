@@ -1,24 +1,24 @@
 import BlogMeta from 'components/BlogMeta'
 import * as demo from 'lib/demo.data'
 import { urlForImage } from 'lib/sanity.image'
-import { Post, Settings } from 'lib/sanity.queries'
+import { Story, Settings } from 'lib/sanity.queries'
 import Head from 'next/head'
 
-export interface PostPageHeadProps {
+export interface StoryPageHeadProps {
   settings: Settings
-  post: Post
+  story: Story
 }
 
-export default function PostPageHead({ settings, post }: PostPageHeadProps) {
+export default function StoryPageHead({ settings, story }: StoryPageHeadProps) {
   const title = settings.title ?? demo.title
   return (
     <Head>
-      <title>{post.title ? `${post.title} | ${title}` : title}</title>
+      <title>{story.title ? `${story.title} | ${title}` : title}</title>
       <BlogMeta />
-      {post.coverImage?.asset?._ref && (
+      {story.coverImage?.asset?._ref && (
         <meta
           property="og:image"
-          content={urlForImage(post.coverImage)
+          content={urlForImage(story.coverImage)
             .width(1200)
             .height(627)
             .fit('crop')

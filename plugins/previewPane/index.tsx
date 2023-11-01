@@ -12,13 +12,13 @@ import {
   type IframeOptions,
 } from 'sanity-plugin-iframe-pane'
 import authorType from 'schemas/author'
-import postType from 'schemas/post'
+import storyType from 'schemas/story'
 
 import AuthorAvatarPreviewPane from './AuthorAvatarPreviewPane'
 
 const urlResolver = defineUrlResolver({
   base: DRAFT_MODE_ROUTE,
-  requiresSlug: [postType.name],
+  requiresSlug: [storyType.name],
 })
 const iframeOptions = {
   url: urlResolver,
@@ -42,7 +42,7 @@ export const previewDocumentNode = (): DefaultDocumentNodeResolver => {
             .title('Preview'),
         ])
 
-      case postType.name:
+      case storyType.name:
         return S.document().views([
           S.view.form(),
           S.view.component(Iframe).options(iframeOptions).title('Preview'),
