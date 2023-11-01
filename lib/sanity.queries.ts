@@ -30,44 +30,18 @@ export const storyAndMoreStoriesQuery = groq`
   }
 }`
 
+/*
 export const storySlugsQuery = groq`
 *[_type == "story" && defined(slug.current)][].slug.current
 `
+*/
 
 export const storyBySlugQuery = groq`
 *[_type == "story" && slug.current == $slug][0] {
   ${storyFields}
 }
 `
-
-export interface Author {
-  name?: string
-  picture?: any
-}
-
-export interface Story {
-  _id: string
-  title?: string
-  coverImage?: any
-  date?: string
-  _updatedAt?: string
-  excerpt?: string
-  author?: Author
-  slug?: string
-  content?: any
-}
-
-export interface Settings {
-  title?: string
-  description?: any[]
-  ogImage?: {
-    title?: string
-  }
-}
-
-
-
-/*
+export const storiesQuery = groq`
 *[_type == "story"]{
   "slug": slug.current,
   "gender": array::unique(array::compact(featured[]->demographicInformation.gender)),
@@ -89,4 +63,35 @@ export interface Settings {
   decades,
   descriptiveTitle,
 }
+`
+
+export interface Author {
+  name?: string
+  picture?: any
+}
+
+export interface Story {
+  _id: string
+  title?: string
+  coverImage?: any
+  date?: string
+  _updatedAt?: string
+  excerpt?: string
+  author?: Author
+  slug?: string
+  body?: any
+}
+
+export interface Settings {
+  title?: string
+  description?: any[]
+  ogImage?: {
+    title?: string
+  }
+}
+
+
+
+/*
+
 */
