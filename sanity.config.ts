@@ -17,7 +17,7 @@ import { deskTool } from 'sanity/desk'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
 import authorType from 'schemas/author'
-import storyType from 'schemas/story';
+import story from 'schemas/story';
 import contentdm from 'schemas/contentdm';
 import demographics from 'schemas/demographics';
 import featuredLinks from 'schemas/featuredLinks';
@@ -49,7 +49,7 @@ export default defineConfig({
   title,
   schema: {
     // If you want more content types, you can add them to this array
-    types: [settingsType, storyType, authorType, storyType, contentdm, demographics, featuredLinks, gallery, kaltura, localSubjects, mainImage, major, miamiEducation, miamiEmployment, miamiProfile, organization, person, personName, relatedLinks, storyMetadata, theme, transcript],
+    types: [settingsType, authorType, story, contentdm, demographics, featuredLinks, gallery, kaltura, localSubjects, mainImage, major, miamiEducation, miamiEmployment, miamiProfile, organization, person, personName, relatedLinks, storyMetadata, theme, transcript],
   },
   plugins: [
     deskTool({
@@ -63,7 +63,7 @@ export default defineConfig({
     previewUrl({
       base: DRAFT_MODE_ROUTE,
       urlSecretId: previewSecretId,
-      matchTypes: [storyType.name, settingsType.name],
+      matchTypes: [story.name, settingsType.name],
     }),
     // Add an image asset source for Unsplash
     unsplashImageAsset(),
