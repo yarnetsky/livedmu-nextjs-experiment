@@ -60,28 +60,7 @@ export default defineType({
       title: 'Story or Story Description',
       description: 'This is the primary text of the story',
       type: 'array',
-      of: [{ type: 'block' },
-      {
-          type: 'image',
-          options: {
-            hotspot: true,
-          },
-          fields: [
-            {
-              name: 'caption',
-              type: 'string',
-              title: 'Image caption',
-              description: 'Caption displayed below the image.',
-            },
-            {
-              name: 'alt',
-              type: 'string',
-              title: 'Alternative text',
-              description: 'Important for SEO and accessiblity.',
-            },
-          ],
-        },
-    ],
+      of: [{ type: 'block' }],
     }),
     defineField({
       name: 'theme',
