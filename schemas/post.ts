@@ -17,8 +17,8 @@ import authorType from './author'
  */
 
 export default defineType({
-  name: 'story',
-  title: 'Story',
+  name: 'post',
+  title: 'Post',
   icon: BookIcon,
   type: 'document',
   fields: [
