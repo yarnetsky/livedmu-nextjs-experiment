@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function StoryPreview({
   title,
-  coverImage,
+  mainImage,
   date,
   excerpt,
   author,
@@ -18,7 +18,7 @@ export default function StoryPreview({
         <CoverImage
           slug={slug}
           title={title}
-          image={coverImage}
+          image={mainImage}
           priority={false}
         />
       </div>

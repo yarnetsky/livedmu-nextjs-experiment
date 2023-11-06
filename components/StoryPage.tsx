@@ -45,7 +45,7 @@ export default function StoryPage(props: StoryPageProps) {
               <article>
                 <StoryHeader
                   title={story.title}
-                  coverImage={story.coverImage}
+                  mainImage={story.mainImage}
                   date={story.date}
                   author={story.author}
                 />

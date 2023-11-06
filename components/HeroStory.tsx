@@ -7,14 +7,14 @@ import Link from 'next/link'
 export default function HeroStory(
   props: Pick<
     Story,
-    'title' | 'coverImage' | 'date' | 'excerpt' | 'author' | 'slug'
+    'title' | 'mainImage' | 'date' | 'excerpt' | 'author' | 'slug'
   >,
 ) {
-  const { title, coverImage, date, excerpt, author, slug } = props
+  const { title, mainImage, date, excerpt, author, slug } = props
   return (
     <section>
       <div className="mb-8 md:mb-16">
-        <CoverImage slug={slug} title={title} image={coverImage} priority />
+        <CoverImage slug={slug} title={title} image={mainImage} priority />
       </div>
       <div className="mb-20 md:mb-28 md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8">
         <div>

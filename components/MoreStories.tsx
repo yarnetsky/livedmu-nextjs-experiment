@@ -12,7 +12,7 @@ export default function MoreStories({ stories }: { stories: Story[] }) {
           <StoryPreview
             key={story._id}
             title={story.title}
-            coverImage={story.coverImage}
+            mainImage={story.mainImage}
             date={story.date}
             author={story.author}
             slug={story.slug}

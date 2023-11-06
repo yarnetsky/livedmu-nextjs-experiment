@@ -5,9 +5,9 @@ import StoryTitle from 'components/StoryTitle'
 import type { Story } from 'lib/sanity.queries'
 
 export default function StoryHeader(
-  props: Pick<Story, 'title' | 'coverImage' | 'date' | 'author' | 'slug'>,
+  props: Pick<Story, 'title' | 'mainImage' | 'date' | 'author' | 'slug'>,
 ) {
-  const { title, coverImage, date, author, slug } = props
+  const { title, mainImage, date, author, slug } = props
   return (
     <>
       <StoryTitle>{title}</StoryTitle>
@@ -15,7 +15,7 @@ export default function StoryHeader(
         {author && <Avatar name={author.name} picture={author.picture} />}
       </div>
       <div className="mb-8 sm:mx-0 md:mb-16">
-        <CoverImage title={title} image={coverImage} priority slug={slug} />
+        <CoverImage title={title} image={mainImage} priority slug={slug} />
       </div>
       <div className="mx-auto max-w-2xl">
         <div className="mb-6 block md:hidden">

@@ -6,7 +6,7 @@ const storyFields = groq`
   date,
   _updatedAt,
   excerpt,
-  coverImage,
+  mainImage,
   "slug": slug.current,
   "author": author->{name, picture},
 `

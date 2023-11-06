@@ -15,10 +15,10 @@ export default function StoryPageHead({ settings, story }: StoryPageHeadProps) {
     <Head>
       <title>{story.title ? `${story.title} | ${title}` : title}</title>
       <BlogMeta />
-      {story.coverImage?.asset?._ref && (
+      {story.mainImage?.asset?._ref && (
         <meta
           property="og:image"
-          content={urlForImage(story.coverImage)
+          content={urlForImage(story.mainImage)
             .width(1200)
             .height(627)
             .fit('crop')
