@@ -1,15 +1,11 @@
-import Avatar from 'components/AuthorAvatar'
 import CoverImage from 'components/CoverImage'
-import Date from 'components/StoryDate'
 import type { Story } from 'lib/sanity.queries'
 import Link from 'next/link'
 
 export default function StoryPreview({
   title,
   mainImage,
-  date,
   excerpt,
-  author,
   slug,
 }: Omit<Story, '_id'>) {
   return (
@@ -27,11 +23,7 @@ export default function StoryPreview({
           {title}
         </Link>
       </h3>
-      <div className="mb-4 text-lg">
-        <Date dateString={date} />
-      </div>
       {excerpt && <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>}
-      {author && <Avatar name={author.name} picture={author.picture} />}
     </div>
   )
 }

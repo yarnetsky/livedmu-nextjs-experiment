@@ -7,7 +7,7 @@ import Link from 'next/link'
 export default function HeroStory(
   props: Pick<
     Story,
-    'title' | 'mainImage' | 'date' | 'excerpt' | 'author' | 'slug'
+    'title' | 'mainImage' | 'excerpt' | 'slug'
   >,
 ) {
   const { title, mainImage, date, excerpt, author, slug } = props
@@ -23,15 +23,9 @@ export default function HeroStory(
               {title || 'Untitled'}
             </Link>
           </h3>
-          <div className="mb-4 text-lg md:mb-0">
-            <Date dateString={date} />
-          </div>
         </div>
         <div>
           {excerpt && <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>}
-          {author && (
-            <AuthorAvatar name={author.name} picture={author.picture} />
-          )}
         </div>
       </div>
     </section>

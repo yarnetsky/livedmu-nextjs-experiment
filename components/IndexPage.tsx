@@ -31,8 +31,6 @@ export default function IndexPage(props: IndexPageProps) {
             <HeroStory
               title={heroStory.title}
               mainImage={heroStory.mainImage}
-              date={heroStory.date}
-              author={heroStory.author}
               slug={heroStory.slug}
               excerpt={heroStory.excerpt}
             />
