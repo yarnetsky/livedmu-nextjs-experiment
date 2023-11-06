@@ -65,21 +65,41 @@ export const storiesQuery = groq`
 }
 `
 
-export interface Author {
-  name?: string
-  picture?: any
-}
-
 export interface Story {
   _id: string
   title?: string
-  coverImage?: any
+  descriptiveTitle?: string
+  slug?: string
+  storyType?: string
+  featuredPerson?: any[]
+  author?: Author
+  body?: any
+  theme?: string[]
+  localSubjects?: any[]
+  seeAlso?: any[]
+  learnMore?: any[]
+  decades?: string
+  mainImage?: any
+  storyGallery?: any
+  productionCredits?: any
+  publishedAt?: string
+  interviewDate?: string
+  duration?: string
+  location?: string
+  kaltura?: any[]
+  contentdm?: any[]
+  transcriptLink?: string
+  citations?: any[]
+  storyMetadata?: any[]
   date?: string
   _updatedAt?: string
   excerpt?: string
-  author?: Author
-  slug?: string
-  body?: any
+  status?: string[]
+}
+
+export interface Author {
+  name?: string
+  picture?: any
 }
 
 export interface Settings {
