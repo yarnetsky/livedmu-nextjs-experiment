@@ -30,11 +30,9 @@ export const storyAndMoreStoriesQuery = groq`
   }
 }`
 
-/*
 export const storySlugsQuery = groq`
 *[_type == "story" && defined(slug.current)][].slug.current
 `
-*/
 
 export const storyBySlugQuery = groq`
 *[_type == "story" && slug.current == $slug][0] {

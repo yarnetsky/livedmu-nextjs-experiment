@@ -47,7 +47,7 @@ export default function StoryPage(props: StoryPageProps) {
                   title={story.title}
                   mainImage={story.mainImage}
                 />
-                <StoryBody content={story.content} />
+                <StoryBody content={story.body} />
               </article>
               <SectionSeparator />
               {moreStories?.length > 0 && <MoreStories stories={moreStories} />}

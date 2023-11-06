@@ -134,8 +134,7 @@ export default defineType({
     defineField({
       name: 'productionCredits',
       title: 'Production Credits',
-      type: 'array',
-      of: [{ type: 'block' }],
+      type: 'string',
     }),
     defineField({
       name: 'publishedAt',
