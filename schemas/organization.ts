@@ -38,10 +38,7 @@ export default defineType({
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'array',
-      of: [
-        { type: 'block' },
-      ]
+      type: 'string',
     }),
     defineField({
       name: 'contentdm',

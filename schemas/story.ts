@@ -183,8 +183,7 @@ export default defineType({
     defineField({
       name: 'citations',
       title: 'Citations',
-      type: 'array',
-      of: [{ type: 'block' }],
+      type: 'string',
     }),
     defineField({
       name: 'storyMetadata',
