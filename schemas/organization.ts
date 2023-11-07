@@ -41,6 +41,7 @@ export default defineType({
       type: 'array',
       of: [
         { type: 'block' },
+      ]
     }),
     defineField({
       name: 'contentdm',

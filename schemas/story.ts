@@ -61,7 +61,8 @@ export default defineType({
       description: 'This is the primary text of the story',
       type: 'array',
       of: [
-        { type: 'block' },,
+        { type: 'block' },
+      ],
     }),
     defineField({
       name: 'excerpt',
@@ -181,6 +182,7 @@ export default defineType({
       type: 'array',
       of: [
         { type: 'block' },
+      ]
     }),
     defineField({
       name: 'storyMetadata',
