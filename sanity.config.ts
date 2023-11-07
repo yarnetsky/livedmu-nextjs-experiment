@@ -2,8 +2,6 @@
  * This config is used to set up Sanity Studio that's mounted on the `/pages/studio/[[...index]].tsx` route
  */
 
-import { markdownSchema } from 'sanity-plugin-markdown'
-
 import { visionTool } from '@sanity/vision'
 import {
   apiVersion,
@@ -76,7 +74,6 @@ export default defineConfig({
     ],
   },
   plugins: [
-    markdownSchema(),
     deskTool({
       structure: settingsStructure(settingsType),
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
