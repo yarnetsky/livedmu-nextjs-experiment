@@ -2,6 +2,8 @@
  * This config is used to set up Sanity Studio that's mounted on the `/pages/studio/[[...index]].tsx` route
  */
 
+import { markdownSchema } from 'sanity-plugin-markdown'
+
 import { visionTool } from '@sanity/vision'
 import {
   apiVersion,
@@ -49,9 +51,32 @@ export default defineConfig({
   title,
   schema: {
     // If you want more content types, you can add them to this array
-    types: [settingsType, authorType, story, contentdm, demographics, featuredLinks, gallery, kaltura, localSubjects, mainImage, major, miamiEducation, miamiEmployment, miamiProfile, organization, person, personName, relatedLinks, storyMetadata, theme, transcript],
+    types: [
+      settingsType,
+      authorType,
+      story,
+      contentdm,
+      demographics,
+      featuredLinks,
+      gallery,
+      kaltura,
+      localSubjects,
+      mainImage,
+      major,
+      miamiEducation,
+      miamiEmployment,
+      miamiProfile,
+      organization,
+      person,
+      personName,
+      relatedLinks,
+      storyMetadata,
+      theme,
+      transcript,
+    ],
   },
   plugins: [
+    markdownSchema(),
     deskTool({
       structure: settingsStructure(settingsType),
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane

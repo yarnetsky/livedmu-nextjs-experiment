@@ -73,7 +73,7 @@ export default defineType({
       type: 'text',
     }),
     defineField({
-      name: 'mainImage',
+      name: 'coverImage',
       title: 'Cover Image',
       type: 'image',
       options: {
@@ -98,7 +98,7 @@ export default defineType({
       title: 'title',
       author: 'author.name',
       date: 'date',
-      media: 'mainImage',
+      media: 'coverImage',
     },
     prepare({ title, media, author, date }) {
       const subtitles = [

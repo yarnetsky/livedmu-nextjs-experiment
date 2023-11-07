@@ -71,8 +71,7 @@ export default defineType({
     defineField({
       name: 'bio',
       title: 'Brief Bio',
-      type: 'array',
-      of: [{ type: 'block' }],
+      type: 'markdown',
     }),
     defineField({
       name: 'learnMore',

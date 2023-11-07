@@ -39,8 +39,7 @@ export default defineType({
     defineField({
       name: 'linkDescription',
       title: 'Link description',
-      type: 'array',
-      of: [{ type: 'block' }],
+      type: 'markdown',
     }),
     defineField({
       name: 'linkImage',
