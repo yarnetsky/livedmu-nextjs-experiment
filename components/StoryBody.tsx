@@ -27,6 +27,8 @@ export default function StoryBody({ content }) {
   return (
     <div className={`mx-auto max-w-2xl ${styles.portableText}`}>
       <PortableText value={content} components={myPortableTextComponents} />
+      <PortableText value={theme} components={myPortableTextComponents} />
+      <PortableText value={decades} components={myPortableTextComponents} />
     </div>
   )
 }

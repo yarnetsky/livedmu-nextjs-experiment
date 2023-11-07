@@ -24,9 +24,7 @@ const NO_POSTS: Story[] = []
 export default function StoryPage(props: StoryPageProps) {
   const { preview, loading, moreStories = NO_POSTS, story, settings } = props
   const { title = demo.title } = settings || {}
-
   const slug = story?.slug
-
   if (!slug && !preview) {
     notFound()
   }
@@ -43,11 +41,12 @@ export default function StoryPage(props: StoryPageProps) {
           ) : (
             <>
               <article>
-                <StoryHeader
-                  title={story.title}
-                  mainImage={story.mainImage}
+                <StoryHeader title={story.title} mainImage={story.mainImage} />
+                <StoryBody
+                  content={story.body}
+                  theme={story.theme}
+                  decades={story.decades}
                 />
-                <StoryBody content={story.body} />
               </article>
               <SectionSeparator />
               {moreStories?.length > 0 && <MoreStories stories={moreStories} />}
