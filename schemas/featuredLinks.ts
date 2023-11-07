@@ -33,7 +33,7 @@ export default defineType({
     defineField({
       name: 'body',
       title: 'Body',
-      type: 'string',
+      type: 'text',
     }),
     defineField({
       name: 'content',

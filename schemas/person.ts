@@ -71,7 +71,7 @@ export default defineType({
     defineField({
       name: 'bio',
       title: 'Brief Bio',
-      type: 'string',
+      type: 'text',
     }),
     defineField({
       name: 'learnMore',

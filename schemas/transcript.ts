@@ -23,7 +23,7 @@ export default defineType({
             {
               name: 'transcriptText',
               title: 'Transcript text',
-              type: 'string',
+              type: 'text',
             },
           ],
         },

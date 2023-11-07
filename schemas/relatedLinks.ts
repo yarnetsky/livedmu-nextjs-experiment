@@ -39,7 +39,7 @@ export default defineType({
     defineField({
       name: 'linkDescription',
       title: 'Link description',
-      type: 'string',
+      type: 'text',
     }),
     defineField({
       name: 'linkImage',

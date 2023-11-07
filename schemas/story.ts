@@ -59,7 +59,7 @@ export default defineType({
       name: 'body',
       title: 'Story or Story Description',
       description: 'This is the primary text of the story',
-      type: 'string',
+      type: 'text',
     }),
     defineField({
       name: 'content',
