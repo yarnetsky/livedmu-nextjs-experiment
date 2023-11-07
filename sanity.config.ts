@@ -32,7 +32,6 @@ import miamiProfile from 'schemas/miamiProfile';
 import organization from 'schemas/organization';
 import person from 'schemas/person';
 import personName from 'schemas/personName';
-
 import relatedLinks from 'schemas/relatedLinks';
 import settingsType from 'schemas/settings'
 import storyMetadata from 'schemas/storyMetadata';
@@ -74,7 +73,6 @@ export default defineConfig({
     ],
   },
   plugins: [
-    markdownSchema(),
     deskTool({
       structure: settingsStructure(settingsType),
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
