@@ -59,10 +59,14 @@ export default defineType({
       name: 'body',
       title: 'Story or Story Description',
       description: 'This is the primary text of the story',
+      type: 'markdown',
+    }),
+    defineField({
+      name: 'content',
+      title: 'Story or Story Description',
+      description: 'This is the primary text of the story',
       type: 'array',
-      of: [
-        { type: 'block' },
-      ],
+      of: [{ type: 'block' }],
     }),
     defineField({
       name: 'excerpt',
@@ -180,9 +184,7 @@ export default defineType({
       name: 'citations',
       title: 'Citations',
       type: 'array',
-      of: [
-        { type: 'block' },
-      ]
+      of: [{ type: 'block' }],
     }),
     defineField({
       name: 'storyMetadata',

@@ -16,6 +16,7 @@ import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
+import { markdownSchema } from 'sanity-plugin-markdown'
 import authorType from 'schemas/author'
 import story from 'schemas/story';
 import contentdm from 'schemas/contentdm';
@@ -74,6 +75,7 @@ export default defineConfig({
     ],
   },
   plugins: [
+    markdownSchema(),
     deskTool({
       structure: settingsStructure(settingsType),
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
