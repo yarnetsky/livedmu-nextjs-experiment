@@ -72,6 +72,7 @@ export interface Story {
   featuredPerson?: any[]
   author?: Author
   body?: any
+  content?: any
   theme?: string[]
   localSubjects?: any[]
   seeAlso?: any[]

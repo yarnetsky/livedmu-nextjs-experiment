@@ -26,9 +26,8 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
 export default function StoryBody({ content }) {
   return (
     <div className={`mx-auto max-w-2xl ${styles.portableText}`}>
+      <h2>Biography</h2>
       <PortableText value={content} components={myPortableTextComponents} />
-      <PortableText value={theme} components={myPortableTextComponents} />
-      <PortableText value={decades} components={myPortableTextComponents} />
     </div>
   )
 }

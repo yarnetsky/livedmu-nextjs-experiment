@@ -10,7 +10,7 @@ export default function HeroStory(
     'title' | 'mainImage' | 'excerpt' | 'slug'
   >,
 ) {
-  const { title, mainImage, date, excerpt, author, slug } = props
+  const { title, mainImage, excerpt, slug } = props
   return (
     <section>
       <div className="mb-8 md:mb-16">

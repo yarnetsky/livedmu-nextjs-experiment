@@ -6,10 +6,13 @@ import StoryBody from 'components/StoryBody'
 import StoryHeader from 'components/StoryHeader'
 import StoryPageHead from 'components/StoryPageHead'
 import StoryTitle from 'components/StoryTitle'
+import StoryThemes from './StoryThemes'
 import SectionSeparator from 'components/SectionSeparator'
 import * as demo from 'lib/demo.data'
 import type { Story, Settings } from 'lib/sanity.queries'
 import { notFound } from 'next/navigation'
+import theme from 'schemas/theme'
+
 
 export interface StoryPageProps {
   preview?: boolean
@@ -42,13 +45,11 @@ export default function StoryPage(props: StoryPageProps) {
             <>
               <article>
                 <StoryHeader title={story.title} mainImage={story.mainImage} />
-                <StoryBody
-                  content={story.body}
-                  theme={story.theme}
-                  decades={story.decades}
-                />
+                <StoryBody content={story.content} />
               </article>
               <SectionSeparator />
+              <SectionSeparator />
+              <StoryThemes theme={theme.title} />
               {moreStories?.length > 0 && <MoreStories stories={moreStories} />}
             </>
           )}
