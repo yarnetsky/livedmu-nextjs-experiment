@@ -6,7 +6,7 @@ import StoryBody from 'components/StoryBody'
 import StoryHeader from 'components/StoryHeader'
 import StoryPageHead from 'components/StoryPageHead'
 import StoryTitle from 'components/StoryTitle'
-import StoryThemes from './StoryThemes'
+//import StoryThemes from './StoryThemes'
 import SectionSeparator from 'components/SectionSeparator'
 import * as demo from 'lib/demo.data'
 import type { Story, Settings } from 'lib/sanity.queries'
@@ -47,9 +47,7 @@ export default function StoryPage(props: StoryPageProps) {
                 <StoryHeader title={story.title} mainImage={story.mainImage} />
                 <StoryBody content={story.content} />
               </article>
-              <SectionSeparator />
-              <SectionSeparator />
-              <StoryThemes theme={theme.title} />
+              <SectionSeparator />    
               {moreStories?.length > 0 && <MoreStories stories={moreStories} />}
             </>
           )}
