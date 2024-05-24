@@ -60,6 +60,8 @@ export const storiesQuery = groq`
   storyType,
   decades,
   descriptiveTitle,
+  content,
+  body,
 }
 `
 
